@@ -4,12 +4,12 @@ import AddIcon from "@mui/icons-material/Add";
 import SaveIcon from "@mui/icons-material/Save";
 
 const getLocalItems = () => {
-  return JSON.parse(localStorage.getItem("lists"));
+  return localStorage.getItem("lists");
 }
 
 const TodoApp = () => {
   const [text, setText] = useState("");
-  const [updateText, setUpdateText] = useState(getLocalItems());
+  const [updateText, setUpdateText] = useState(JSON.parse(getLocalItems()));
   const [icon, setIcon] = useState(false);
   const [getId, setGetId] = useState(null);
 
